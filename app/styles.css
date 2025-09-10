@@ -163,6 +163,8 @@ body {
 }
 
 .pack-card {
+  position: relative;
+  min-height: 340px; /* or whatever height fits your content */
   background: white;
   border-radius: 10px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
@@ -179,7 +181,7 @@ body {
   padding: 25px;
   text-align: center;
   background: #f8f9fa;
-  border-bottom: 3px solid #e60000;
+  
 }
 
 .pack-title {
@@ -415,6 +417,32 @@ body {
 
 
 
+
+/* Example CSS for flipping card */
+.flip-container {
+  perspective: 1000px;
+}
+.flipper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+.flipped .flipper {
+  transform: rotateY(180deg);
+}
+.front, .back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  top: 0;
+  left: 0;
+}
+.back {
+  transform: rotateY(180deg);
+}
 
 /* Mobile Responsive */
 @media (max-width: 768px) {
